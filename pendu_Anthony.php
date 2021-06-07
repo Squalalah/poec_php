@@ -1,5 +1,13 @@
 <?php
-
+/*
+ *
+ *
+ *
+ * Exercice 1
+ *
+ *
+ *
+ */
 $answer = "mystere";
 
 echo "Veuillez saisir le mot à trouver";
@@ -22,6 +30,16 @@ else {
         echo 'Perdu ! (franchement, ca craint un peu vu que vous connaissez la réponse)'. PHP_EOL;
     }
 }
+
+/*
+ *
+ *
+ *
+ * Exercice 2
+ *
+ *
+ *
+ */
 
 echo 'Bon allez, on retente mais en plus dur'.PHP_EOL;
 $array = array('mystere', 'boule', 'enfant', 'demenagement');
