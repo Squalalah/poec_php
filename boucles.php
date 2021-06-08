@@ -24,7 +24,3 @@ $id = readline('Merci de saisir l\'id du produit à afficher');
 if (!preg_match('/^\d+$/', $id)) {
     echo 'Fin du programme';
 }
-
-// TODO: Récupération du produit (dans la BDD) avec l'ID fournit.
-
-// TODO: Affichage de la description.

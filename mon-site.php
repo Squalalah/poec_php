@@ -31,11 +31,11 @@
             <label for="name">Nom</label>
             <input type="text" id="name" name="name" value="<?php echo $_GET['name'] ?>">
         </div>
+
         <input type="submit" value="Tenter">
     </form>
 
     <?php echo 'Hello !!'; ?>
-
     <?php echo $_GET['name'] ?? 'Pas de nom saisi'; ?>
 
     <?php
