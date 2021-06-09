@@ -16,6 +16,6 @@ echo PHP_EOL;
 $previousSunday = new DateTime('NOW');
 $previousSunday->modify('previous sunday');
 echo $previousSunday->format($format);
-echo PHP_EOL
+echo PHP_EOL;
 
 ?>
