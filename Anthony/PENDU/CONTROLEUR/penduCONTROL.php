@@ -46,6 +46,13 @@ if(!isset($_SESSION['lettersAlreadyUsed'])) {
 }
 else $lettersAlreadyUsed = $_SESSION['lettersAlreadyUsed'];
 
+if(!isset($_SESSION['wordsAlreadyUsed'])) {
+    $wordsAlreadyUsed = '';
+    $_SESSION['wordsAlreadyUsed'] = $wordsAlreadyUsed;
+}
+else $wordsAlreadyUsed = $_SESSION['wordsAlreadyUsed'];
+
+
 if(!isset($_SESSION['stringReponseFound'])) {
     for ($i=0; $i<strlen($answerAux); $i++)
     {
@@ -91,10 +98,16 @@ if(isset($_POST['proposition']) && $chance > 0)
         echo nl2br('Merci d\'entrer une vraie valeur (a-z, A-Z)');
         return;
     }
-    if ($resultAux === $answerAux) {
-        $found = true;
-        $try = true;
-    } elseif (!$isWord) {
+    elseif($isWord) {
+        if ($resultAux === $answerAux) {
+            $found = true;
+            $try = true;
+        }
+        if (strpos($wordsAlreadyUsed, $resultAux) === false) {
+            $wordsAlreadyUsed .= $resultAux.' ';
+        }
+    }
+    else{
         $position = array_search($resultAux, $arrayLastLetters);
         if (array_search($resultAux, $stringReponseFound) !== false) {
             echo nl2br('Vous avez déjà proposé cette lettre');
@@ -125,10 +138,12 @@ if(isset($_POST['proposition']) && $chance > 0)
     echo nl2br('Reponse à trouver : ' . $answerAux . PHP_EOL);
     echo nl2br('Votre proposition : ' . $resultAux . PHP_EOL);
     echo nl2br('toutes les lettres tentés ' . $lettersAlreadyUsed . PHP_EOL);
+    echo nl2br('tout les mots tentés ' . $wordsAlreadyUsed . PHP_EOL);
     echo nl2br('Vos lettres déjà trouvés : ' . implode($stringReponseFound));
     $_SESSION['chance'] = $chance;
     if($chance == 0) echo nl2br('VOUS AVEZ PERDU LOLO');
     $_SESSION['lettersAlreadyUsed'] = $lettersAlreadyUsed;
+    $_SESSION['wordsAlreadyUsed'] = $wordsAlreadyUsed;
     $_SESSION['stringReponseFound'] = $stringReponseFound;
     $_SESSION['arrayLastLetters'] = $arrayLastLetters;
 }
