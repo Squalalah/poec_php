@@ -10,14 +10,13 @@ $aTrouver = $dico[array_rand($dico)];
 $jeuEnCours = true;
 
 do {
-    $proposition = readline('Merci de saisir un mot pour tenter de trouver le mot mystere : ');
-    $proposition = trim($proposition); // Suppression du saut de ligne final (plus les trailing spaces).
+    $proposition = trim(readline('Merci de saisir un mot pour tenter de trouver le mot mystere : '));
 
     if ($proposition === $aTrouver) {
         echo 'Bravo !!';
         $jeuEnCours = false;
     } else {
-        echo $proposition.' n\'est pas le mot à trouver, vous pouvez tenter de nouveau'.PHP_EOL;
+        echo $proposition.' n\'est pas le mot à trouver, vous pouvez tenter de nouveau';
     }
 
     echo PHP_EOL;
@@ -32,4 +31,4 @@ while ($proposition !== $aTrouver) {
     $proposition = trim(readline('Nouvelle tentative : '));
 }
 
-echo 'Bravo !!';
+echo 'Bravo !!'.PHP_EOL;
