@@ -11,7 +11,7 @@ $partieEnCours = true;
 
 do {
     // Saisie d'une valeur par l'utilisateur.
-    $saisie = readline('Merci de saisir un nombre entre 0 et 100 : ');
+    $saisie = \intval(readline('Merci de saisir un nombre entre 0 et 100 : '));
 
     // Traiter la valeur saisie.
     if ($saisie === $valeur) {      // si la valeur est correcte => on gagne la partie
