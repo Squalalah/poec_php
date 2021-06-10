@@ -10,20 +10,11 @@
  *
  */
 
-echo 'Bon allez, on retente mais en plus dur'.PHP_EOL;
-$fileContent = file_get_contents('mots.txt');
-$array = explode(',', $fileContent);
-$chance = 5;
-$answerAux = $array[array_rand( $array, 1)];
-$arrayLastLetters = str_split($answerAux);
-$stringReponseFound= [];
-$letttersAlreadyUsed = '';
-
-for ($i=0; $i<strlen($answerAux); $i++)
-{
-    array_push($stringReponseFound, '_');
+function choisirMot(array $tab) : string {
+    return $tab[array_rand($tab, 1)];
 }
-$found = false;
+
+echo 'Bon allez, on retente mais en plus dur'.PHP_EOL;
 $handleAux = fopen('php://stdin', 'r');
 echo 'Voulez vous ajouter un mot au fichier ? y pour oui';
 $fileChoice = trim(fgets($handleAux));
@@ -48,59 +39,80 @@ if($fileChoice == 'y')
     }
 }
 
+lancerPartie();
 
-
-while(!$found)
-{
+function saisirProposition() : string {
     echo "Veuillez saisir le mot à trouver";
-    $resultAux = trim(fgets($handleAux));
-    $isWord = false;
-    $try = false;
-    if(strlen($resultAux) > 1) $isWord = true;
-    if(!preg_match("/[A-Za-z0-9]+/", $resultAux))
+    $handleAux = fopen('php://stdin', 'r');
+    return trim(fgets($handleAux));
+}
+
+function lancerPartie() {
+    $fileContent = file_get_contents('mots.txt');
+    $array = explode(',', $fileContent);
+    $chance = 5;
+    $answerAux = choisirMot($array);
+    $arrayLastLetters = str_split($answerAux);
+    $stringReponseFound= [];
+    $letttersAlreadyUsed = '';
+
+    for ($i=0; $i<strlen($answerAux); $i++)
     {
-        echo 'Merci d\'entrer une vraie valeur (a-z, A-Z)';
-        continue;
+        array_push($stringReponseFound, '_');
     }
-    if($resultAux === $answerAux) {
-        $found = true;
-        $try = true;
-    }
-    elseif(!$isWord)  {
-        $position = array_search($resultAux, $arrayLastLetters);
-        if(array_search($resultAux, $stringReponseFound) !== false)
+    $found = false;
+    while(!$found)
+    {
+        $resultAux = saisirProposition();
+        $isWord = false;
+        $try = false;
+        if(strlen($resultAux) > 1) $isWord = true;
+        if(!preg_match("/[A-Za-z0-9]+/", $resultAux))
         {
-            echo 'Vous avez déjà proposé cette lettre';
+            echo 'Merci d\'entrer une vraie valeur (a-z, A-Z)';
             continue;
         }
-        if(strpos($letttersAlreadyUsed, $resultAux) === false)
-        {
-            $letttersAlreadyUsed .= $resultAux;
-        }
-        while($position !== false) {
-            $try = true;
-            $stringReponseFound[$position] = $resultAux;
-            unset($arrayLastLetters[$position]);
-            echo 'Vous avez trouvé une lettre';
-            $position = array_search($resultAux, $arrayLastLetters);
-        }
-        if(implode($stringReponseFound) == $answerAux)
-        {
+        if($resultAux === $answerAux) {
             $found = true;
+            $try = true;
         }
+        elseif(!$isWord)  {
+            $position = array_search($resultAux, $arrayLastLetters);
+            if(array_search($resultAux, $stringReponseFound) !== false)
+            {
+                echo 'Vous avez déjà proposé cette lettre';
+                continue;
+            }
+            if(strpos($letttersAlreadyUsed, $resultAux) === false)
+            {
+                $letttersAlreadyUsed .= $resultAux;
+            }
+            while($position !== false) {
+                $try = true;
+                $stringReponseFound[$position] = $resultAux;
+                unset($arrayLastLetters[$position]);
+                echo 'Vous avez trouvé une lettre';
+                $position = array_search($resultAux, $arrayLastLetters);
+            }
+            if(implode($stringReponseFound) == $answerAux)
+            {
+                $found = true;
+            }
+        }
+        if(!$try){
+            $chance--;
+            echo 'Vous n\'avez pas reussit à trouver de mots/lettres, reessayez !';
+        }
+        if($found) {
+            echo 'Vous avez gagné, la réponse était bien '. $answerAux . PHP_EOL;
+        }
+        echo 'Reponse à trouver : '. $answerAux. PHP_EOL;
+        echo 'Votre proposition : '. $resultAux. PHP_EOL;
+        echo 'toutes les lettres tentés ' . $letttersAlreadyUsed. PHP_EOL;
+        echo 'Vos lettres déjà trouvés : '. implode($stringReponseFound);
     }
-    if(!$try){
-    $chance--;
-    echo 'Vous n\'avez pas reussit à trouver de mots/lettres, reessayez !';
-    }
-    if($found) {
-        echo 'Vous avez gagné, la réponse était bien '. $answerAux . PHP_EOL;
-    }
-    echo 'Reponse à trouver : '. $answerAux. PHP_EOL;
-    echo 'Votre proposition : '. $resultAux. PHP_EOL;
-    echo 'toutes les lettres tentés ' . $letttersAlreadyUsed. PHP_EOL;
-    echo 'Vos lettres déjà trouvés : '. implode($stringReponseFound);
 }
+
 
 
 

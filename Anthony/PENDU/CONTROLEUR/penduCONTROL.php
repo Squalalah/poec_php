@@ -14,6 +14,8 @@ if(isset($_POST['destroy']))
  *
  */
 
+
+
 echo nl2br('Bon allez, on retente mais en plus dur'.PHP_EOL);
 $fileContent = file_get_contents('mots.txt');
 $array = explode(',', $fileContent);
