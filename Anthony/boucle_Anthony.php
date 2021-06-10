@@ -44,12 +44,10 @@ echo PHP_EOL;
 $ask = fopen('php://stdin', 'r');
 echo 'Merci d\'entrer la phrase';
 $sentenceChoice = trim(fgets($ask));
-echo 'Combien de fois voulez-vous qu\'on repète cette phrase ?';
+echo 'Combien de fois voulez-vous qu\'on répète cette phrase ?';
 $countChoice = trim(fgets($ask));
 
 for($i = 0; $i < $countChoice; $i++) {
     echo $sentenceChoice . ' ';
 }
 
-
-?>
