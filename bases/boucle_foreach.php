@@ -85,29 +85,3 @@ for ($i = 0; $i < count($toutesLesClefs); $i++) {
 }
 
 echo PHP_EOL;
-
-
-
-// Il faut trouver chien
-/*
-L'état actuelle : _ _ _ _ _
-Il vous reste 5 essais.
-
-Quelle est votre proposition : t
-t n'est pas dans le mot à trouver.
-
-L'état actuelle : _ _ _ _ _
-Il vous reste 4 essais.
-Vous avez déjà tenté : t
-
-Quelle est votre proposition : e
-Il y a 1 'e' dans le mot à trouver.
-
-L'état actuelle : _ _ _e_
-Il vous reste 4 essais.
-Vous avez déjà tenté : t, e
-
-Quelle est votre proposition : chien
-
-Bravo il fallait trouver chien. Vous avez gagné avec 1 mauvaise réponse.
-*/
