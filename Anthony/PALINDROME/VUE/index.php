@@ -5,9 +5,7 @@
 
 
 <body>
-
 <p>Bienvenue dans le jeu du palindrome</p>
-
 <form action="#" method="POST">
     <label for="proposition">Votre proposition:</label><br>
     <input type="text" id="proposition" name="proposition" value=""><br>
