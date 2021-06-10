@@ -1,1 +1,4 @@
-Le plus ou moins n'est fonctionnel qu'en mode terminal, si vous accédez à "plumoins_Anthony.php", votre navigateur va planter.
+<?php
+header("Location: VUE/index.php", TRUE, 301);
+exit();
+?>
