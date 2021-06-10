@@ -8,7 +8,7 @@ $aTrouver = $dico[array_rand($dico)];
  * Initialisation du compteur de chances (on perds si ce nombre atteint 0).
  */
 $nbChances = 5;
-$etat = preg_replace('/[\wàéèëïçùûâ]/', '_', $aTrouver);
+$etat = preg_replace('/[\wàéèëêïçùûâ]/i', '_', $aTrouver);
 // Autre initialisation possible (avec une boucle).
 // Initialisation possible.
 // $etat = '';
@@ -20,7 +20,6 @@ $etat = preg_replace('/[\wàéèëïçùûâ]/', '_', $aTrouver);
 //     }
 // }
 $historiqueTentatives = [];
-
 
 do {
     echo 'L\'état actuel : '.$etat.PHP_EOL;
