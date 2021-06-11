@@ -50,4 +50,20 @@ function mySecondeSomme(int...$nombre) : int {
 }
 echo mySecondeSomme(0,1,10,11).PHP_EOL;
 echo mySecondeSomme(1,2). PHP_EOL;
+
+// EXERCICE 4
+
+function myPrompt() {
+    echo 'Veuillez saisir un entier : '.PHP_EOL;
+    $valeur = readline();
+    echo PHP_EOL;
+    if(is_numeric($valeur))
+    {
+        $valeur = strval($valeur);
+        echo 'Vous avez bien saisi l\'entier ' . $valeur.PHP_EOL;
+    }
+    else echo 'Cette saisie n\'est pas un entier '.PHP_EOL;
+}
+myPrompt();
+
 ?>

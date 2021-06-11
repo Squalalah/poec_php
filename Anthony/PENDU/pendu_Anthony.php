@@ -35,7 +35,6 @@ if($fileChoice == 'y')
         echo 'Fichier ajouté, voulez vous continuer ? STOP pour arrêter';
         $wordChoice = trim(fgets($handleAux));
         if($wordChoice == "STOP") $stop = true;
-
     }
 }
 
