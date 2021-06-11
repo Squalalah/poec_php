@@ -1,0 +1,20 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 5px;
+}
+
+tr:not(:last-of-type) td,
+tr:not(:last-of-type) th {
+  border-bottom: 1px solid silver;
+}
+
+body {
+  background-color: #f8f8f2;
+}
+
+/*# sourceMappingURL=app.css.map */
