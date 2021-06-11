@@ -1,0 +1,12 @@
+.php {
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    color: aliceblue;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+}
+nav li { margin: 5px; }
