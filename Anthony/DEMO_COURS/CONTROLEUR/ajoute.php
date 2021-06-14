@@ -18,3 +18,5 @@ catch (PDOException $e)
     echo 'Erreur avec la BD!: ' .$e->getMessage() .'<br/>';
     die();
 }
+
+header('Location: ../formInsert.php?message=1');
