@@ -1,5 +1,4 @@
 <?php
-
 require_once('../MODELE/localData.php');
 $id=htmlentities($_POST['id']);
 $lib=htmlentities($_POST['lib']);
