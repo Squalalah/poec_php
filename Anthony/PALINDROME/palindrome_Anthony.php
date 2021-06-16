@@ -14,6 +14,6 @@ while(1 < 2)
 
 $wordArray = str_split($wordChoice);
 if($wordArray == array_reverse($wordArray)) echo 'Ce mot est bien un palindrome'. PHP_EOL;
-else echo 'Ce mot n\'est pas un palindrome'. PHP_EOL
+else echo 'Ce mot n\'est pas un palindrome'. PHP_EOL;
 
 ?>
