@@ -10,7 +10,9 @@ class Livre  //création de la classe
         $this->nbrePages = $leNbrePages;
         $this->nbreChapitres =$leNbreChapitres;
         $this->titreLivre =$leTitreLivre;
-    } public function infosLivre() : string {
+    }
+
+    public function infosLivre() : string {
         return 'Livre dont le titre est '.$this->titreLivre.' qui contient  '. $this->nbreChapitres.' chapitres et qui a '.$this->nbrePages.' pages.';
     }
 }
