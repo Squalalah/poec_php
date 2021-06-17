@@ -1,4 +1,6 @@
 <?php
+
+
 class Individu {
     private string $nom;
     private string $prenom;

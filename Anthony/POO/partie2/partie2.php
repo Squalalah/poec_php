@@ -2,18 +2,26 @@
 require_once("Livre.php");
 require_once("Individu.php");
 require_once("Voiture.php");
+
 $livre1 = new Livre(356,13,'Cendrillon et la mort des &eacute;toiles');
 echo $livre1->infosLivre()."<br/>".PHP_EOL;
 $livre1->setNbrePages(12);
-echo 'le livre 1 a maintenant:'.$livre1->getNbrePages().' pages'.PHP_EOL;
+echo 'Le livre 1 a maintenant: '.$livre1->getNbrePages().' pages'.PHP_EOL;
 
 $livre2 = new Livre(200, 15, 'Pas de titre');
+echo 'Le titre du livre2 est '.$livre2->getTitreLivre().PHP_EOL;
+
 $livre2->setTitreLivre('Une merveilleuse histoire du temps');
-echo $livre2->getTitreLivre().PHP_EOL;
+echo 'Le titre du livre2 est '.$livre2->getTitreLivre().PHP_EOL;
+
 $livre2->setNbreChapitres(8);
-echo $livre2->getNbreChapitres().PHP_EOL;
+echo 'Le nombre de chapitre est désormais de '.$livre2->getNbreChapitres().PHP_EOL;
+
 $livre2->setNbrePages(230);
-echo $livre2->getTitreLivre(). " | " . $livre2->getNbrePages() . " | " . $livre2->getNbreChapitres().PHP_EOL;
+echo $livre2->infosLivre().PHP_EOL;
+
+
+
 
 $char = new Individu("Montreuil", "Anthony");
 $char = null;

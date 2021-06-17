@@ -21,8 +21,6 @@ class Voiture {
         $this->couleur = $couleur;
     }
 
-
-
     #region getter/setter
     /**
      * @return string
@@ -154,7 +152,7 @@ class Voiture {
     #endregion
 
     public function getInfos() : string {
-        return $this->numSerie . ' ' . $this->marque . ' ' . $this->modele . ' ' . $this->annee . ' ' . $this->kilometrage . ' ' . $this->typeCarburant . ' ' . $this->typeBoiteVitesse . ' ' . $this->couleur;
+        return $this->numSerie.' '.$this->marque.' '.$this->modele.' '.$this->annee.' '.$this->kilometrage.' '.$this->typeCarburant.' '.$this->typeBoiteVitesse.' '.$this->couleur;
     }
 
 }
