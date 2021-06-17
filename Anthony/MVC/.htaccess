@@ -1,0 +1,3 @@
+#RewriteEngine Off
+#RedirectPermanent /var/www/html/siteweb/imie/modeliserObjetsMVC/modif8Final/index.php
+#/home/toto/expose1.html http://www.eleves.ens.fr/home/toto/exposes/1.html

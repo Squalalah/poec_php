@@ -1,0 +1,54 @@
+html,body{
+  height:100%;
+}
+body{
+color:black;
+background-color: white;
+font-family:Arial, Helvetica, sans-serif;
+}
+.titreMineral
+{
+  margin-bottom: 0px;
+    color:#787b7e;
+}
+#principal
+{
+min-height:100%;
+background-image:radial-gradient(#c5def8, white);
+margin:auto;
+text-align:justify;
+padding : 8px;
+}
+#contenu
+{
+  margin-top: 108px;
+  margin-bottom: 23px;
+}
+#principal header{
+  position: fixed;
+  height: 120px;
+  width: 100%;
+  background-color: white;
+  top:0px;
+  margin: 0px;
+  padding: 0px;
+}
+#contenu header{
+
+  position: static; ;
+  height: auto;
+  width: 100%;
+  background-image:radial-gradient(#c5def8, white);
+}
+footer
+{
+  text-align:center;
+}
+.details
+{
+  border: #0099CC 2px solid;
+}
+.details td,th
+{
+  border: #0099CC 2px solid;
+}
