@@ -1,5 +1,5 @@
 <?php
-require_once("classes/DTOIndividu.php");
+require_once("classes/dto/DTOIndividu.php");
 //recuperation des individus de la base de données
 $lesGensDansLaBD=DTOIndividu::selectAll();
 echo "---------------------------------------------------------------<br>";

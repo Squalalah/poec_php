@@ -32,18 +32,18 @@ if(isset($_POST['idAuteur']) && isset($_POST['prenomAuteur']))
 echo '<form action="#" method="POST">';
 echo '<label for="idEditeur">ID Editeur:</label><br>';
 echo '<input type="text" id="idEditeur" name="idEditeur" value="" placeholder="nom" required><br>';
-echo '<label for="nomEditeur">Modifier nom Editeur:</label><br>';
-echo '<input type="text" id="nomEditeur" name="nomEditeur" value="" placeholder="nom" required><br>';
+echo '<label for="nomAdherent">Modifier nom Editeur:</label><br>';
+echo '<input type="text" id="nomAdherent" name="nomAdherent" value="" placeholder="nom" required><br>';
 echo '<input type="submit" name="submitModifEditeur" value="Submit">';
 echo '</form>';
 
 
 
-if(isset($_POST['idEditeur']) && isset($_POST['nomEditeur']))
+if(isset($_POST['idEditeur']) && isset($_POST['nomAdherent']))
 {
     require_once ('MODELE/localLibrairieData.php');
     $id=htmlentities($_POST['idEditeur']);
-    $nom=htmlentities($_POST['nomEditeur']);
+    $nom=htmlentities($_POST['nomAdherent']);
     try {
         $maConnexion = new PDO($dns, $user, $mdp);
         $req='update editeur set nom_editeur=? where num_editeur=?;';

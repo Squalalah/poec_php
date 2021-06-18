@@ -1,18 +1,24 @@
 <?php
 
-abstract class Individu
+class Individu
 {
     // --- Propriétés
     protected $nom;
     protected $prenom;
     protected $telephone;
-    public abstract function infos() : string;
+    //public abstract function infos() : string;
 
     public function __construct($nom, $prenom,$telephone = null)
     {
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->telephone = $telephone;
+    }
+
+    public function infosIndividu() : string {
+        $text = 'Nom : '.$this->nom.', Prenom : '.$this->prenom;
+        if($this->telephone != null) $text .= ', telephone : '.$this->telephone;
+        return $text;
     }
 
     /**

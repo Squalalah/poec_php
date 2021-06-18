@@ -1,75 +1,57 @@
 <?php
 
-class Auteur {
-    private int $numAuteur;
-    private string $nomAuteur;
-    private string $prenomAuteur;
+class Editeur {
+    private int $numEditeur;
+    private string $nomEditeur;
 
     /**
      * Auteur constructor.
-     * @param int $numAuteur
-     * @param string $nomAuteur
-     * @param string $prenomAuteur
+     * @param int $numEditeur
+     * @param string $nomEditeur
      */
-    public function __construct(string $nomAuteur, string $prenomAuteur, int $numAuteur = -1)
+    public function __construct(string $nomEditeur, int $numEditeur = -1)
     {
-        $this->nomAuteur = $nomAuteur;
-        $this->prenomAuteur = $prenomAuteur;
-        $this->numAuteur = $numAuteur;
+        $this->nomEditeur = $nomEditeur;
+        $this->numEditeur = $numEditeur;
     }
 
     public function getInfos()
     {
-        return "Auteur[id=".$this->numAuteur.",prenom=".$this->prenomAuteur.",nom=".$this->nomAuteur."]";
+        return "Editeur[id=".$this->numEditeur.",nom=".$this->nomEditeur."]";
     }
 
     /**
      * @return int
      */
-    public function getNumAuteur(): int
+    public function getNumEditeur(): int
     {
-        return $this->numAuteur;
+        return $this->numEditeur;
     }
 
     /**
-     * @param int $numAuteur
+     * @param int $numEditeur
      */
-    public function setNumAuteur(int $numAuteur): void
+    public function setNumEditeur(int $numEditeur): void
     {
-        $this->numAuteur = $numAuteur;
-    }
-
-    /**
-     * @return string
-     */
-    public function getNomAuteur(): string
-    {
-        return $this->nomAuteur;
-    }
-
-    /**
-     * @param string $nomAuteur
-     */
-    public function setNomAuteur(string $nomAuteur): void
-    {
-        $this->nomAuteur = $nomAuteur;
+        $this->numEditeur = $numEditeur;
     }
 
     /**
      * @return string
      */
-    public function getPrenomAuteur(): string
+    public function getNomEditeur(): string
     {
-        return $this->prenomAuteur;
+        return $this->nomEditeur;
     }
 
     /**
-     * @param string $prenomAuteur
+     * @param string $nomEditeur
      */
-    public function setPrenomAuteur(string $prenomAuteur): void
+    public function setNomEditeur(string $nomEditeur): void
     {
-        $this->prenomAuteur = $prenomAuteur;
+        $this->nomEditeur = $nomEditeur;
     }
+
 
 
 

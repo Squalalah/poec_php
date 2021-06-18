@@ -1,36 +1,37 @@
 <?php
-require_once("classes/dto/DTOediteur.php");
+require_once("classes/dto/DTOadherent.php");
 //recuperation des individus de la base de données
-$lesEditeursDansLaBD=DTOEditeur::selectAll();
+$lesAdherentsDansLaBD=DTOAdherent::selectAll();
 echo "---------------------------------------------------------------<br>";
-foreach($lesEditeursDansLaBD as $edit)
+foreach($lesAdherentsDansLaBD as $adh)
 {
-echo $edit->getInfos()."<br>";
+    echo $adh->getInfos()."<br>";
 }
-$maFille=DTOEditeur::selectById(2);
+$maFille=DTOAdherent::selectById(2);
 echo "Ma fille est :".$maFille->getInfos()."<br>";
 
 
-$am =new Editeur("Richer");
-DTOEditeur::insert($am);
+$am =new Adherent("Montreuil", "Anthony", "5 avenue des charmes", "49124", "Angers", "0101010101");
+DTOAdherent::insert($am);
 echo $am->getInfos()."<br>";
 
-$am->setNomEditeur("Larousse");
-DTOEditeur::update($am);
-$lesEditeursDansLaBD[] = $am;
+$am->setNomAdherent("Yolosse");
+$am->setTelAdherent("0606060606");
+DTOAdherent::update($am);
+$lesAdherentsDansLaBD[] = $am;
 echo "---------------------------------------------------------------<br>";
-foreach($lesEditeursDansLaBD as $edit)
+foreach($lesAdherentsDansLaBD as $adh)
 {
-echo $edit->getInfos()."<br>";
+echo $adh->getInfos()."<br>";
 }
-DTOEditeur::delete($am);
-if (($key = array_search($am, $lesEditeursDansLaBD)) !== false) {
-    unset($lesEditeursDansLaBD[$key]);
+DTOAdherent::delete($am);
+if (($key = array_search($am, $lesAdherentsDansLaBD)) !== false) {
+    unset($lesAdherentsDansLaBD[$key]);
 }
 echo "---------------------------------------------------------------<br>";
-foreach($lesEditeursDansLaBD as $edit)
+foreach($lesAdherentsDansLaBD as $adh)
 {
-echo $edit->getInfos()."<br>";
+echo $adh->getInfos()."<br>";
 }
 ?>
 

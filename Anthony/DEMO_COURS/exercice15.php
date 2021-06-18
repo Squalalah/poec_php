@@ -5,16 +5,16 @@ if(isset($_GET['modifEditeur'])) {
     $id = $_GET['modifEditeur'];
     echo '<form action="#" method="POST">';
     echo '<input type="hidden" id="idEditeur" name="idEditeur" value="'.$id.'"><br>';
-    echo '<label for="nomEditeur">Modifier nom editeur:</label><br>';
-    echo '<input type="text" id="nomEditeur" name="nomEditeur" value="" placeholder="nom" required><br>';
+    echo '<label for="nomAdherent">Modifier nom editeur:</label><br>';
+    echo '<input type="text" id="nomAdherent" name="nomAdherent" value="" placeholder="nom" required><br>';
     echo '<input type="submit" name="submitEditeur" value="Submit">';
     echo '</form>';
 }
 
-if(isset($_POST['idEditeur']) && isset($_POST['nomEditeur']))
+if(isset($_POST['idEditeur']) && isset($_POST['nomAdherent']))
 {
     $id=htmlentities($_POST['idEditeur']);
-    $nom=htmlentities($_POST['nomEditeur']);
+    $nom=htmlentities($_POST['nomAdherent']);
     try {
         $maConnexion = new PDO($dns, $user, $mdp);
         $req='update editeur set nom_editeur=? where num_editeur=?;';

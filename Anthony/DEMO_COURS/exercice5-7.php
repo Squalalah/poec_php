@@ -25,13 +25,13 @@ echo '</form>';
 
 echo '<form action="#" method="POST">';
 echo '<label for="Nom">Nom Editeur:</label><br>';
-echo '<input type="text" id="nomEditeur" name="nomEditeur" value="" placeholder="nom" required><br>';
+echo '<input type="text" id="nomAdherent" name="nomAdherent" value="" placeholder="nom" required><br>';
 echo '<input type="submit" value="Submit">';
 echo '</form>';
 
-if(isset($_POST['nomEditeur']))
+if(isset($_POST['nomAdherent']))
 {
-    $nom=htmlentities($_POST['nomEditeur']);
+    $nom=htmlentities($_POST['nomAdherent']);
     try {
         $maConnexion = new PDO($dns, $user, $mdp);
         $req='insert into editeur values (NULL,?);';
@@ -49,15 +49,15 @@ if(isset($_POST['nomEditeur']))
 
 echo '<form action="#" method="POST">';
 echo '<label for="Nom">Nom Auteur:</label><br>';
-echo '<input type="text" id="nomAuteur" name="nomAuteur" value="" placeholder="nom" required><br>';
+echo '<input type="text" id="nomAdherent" name="nomAdherent" value="" placeholder="nom" required><br>';
 echo '<label for="Nom">Prenom Auteur:</label><br>';
 echo '<input type="text" id="prenomAuteur" name="prenomAuteur" value="" placeholder="nom" required><br>';
 echo '<input type="submit" name="submitAuteur" value="Submit">';
 echo '</form>';
 
-if(isset($_POST['nomAuteur']) && isset($_POST['prenomAuteur']))
+if(isset($_POST['nomAdherent']) && isset($_POST['prenomAuteur']))
 {
-    $nom=htmlentities($_POST['nomAuteur']);
+    $nom=htmlentities($_POST['nomAdherent']);
     $prenom=htmlentities($_POST['prenomAuteur']);
     try {
         $maConnexion = new PDO($dns, $user, $mdp);

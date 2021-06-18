@@ -1,5 +1,5 @@
 <?php
-require_once("individu.php");
+require_once("../individu.php");
 class DTOIndividu {
 	public static function insert(Individu $data)
 	{
@@ -97,7 +97,7 @@ class DTOIndividu {
 	// Renvoie un objet de connexion à la BD en initialisant la connexion au besoin
 	private static function getBdd() {
 	// Création de la connexion
-	require("localData.php");
+	require("../localData.php");
 	return new PDO($dns,$user,$mdp);
 	}
 }

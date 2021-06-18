@@ -1,32 +1,36 @@
 <?php
-require_once("classes/dto/DTOIndividu.php");
+require_once("classes/dto/DTOauteur.php");
 //recuperation des individus de la base de données
-$lesGensDansLaBD=DTOIndividu::selectAll();
+$lesAuteursDansLaBD=DTOAuteur::selectAll();
 echo "---------------------------------------------------------------<br>";
-foreach($lesGensDansLaBD as $pers)
+foreach($lesAuteursDansLaBD as $aut)
 {
-echo $pers->getInfos()."<br>";
+echo $aut->getInfos()."<br>";
 }
-$maFille=DTOIndividu::selectById(2);
+$maFille=DTOAuteur::selectById(2);
 echo "Ma fille est :".$maFille->getInfos()."<br>";
 
 
-$am =new Individu("Martineau","Aurelien");
-DTOIndividu::insert($am);
+$am =new Editeur("Martineau","Aurelien");
+DTOAuteur::insert($am);
 echo $am->getInfos()."<br>";
 
-$am->setPrenom("Aurélien");
-DTOIndividu::update($am);
+$am->setPrenomAuteur("Aurélien");
+DTOAuteur::update($am);
+$lesAuteursDansLaBD[] = $am;
 echo "---------------------------------------------------------------<br>";
-foreach($lesGensDansLaBD as $pers)
+foreach($lesAuteursDansLaBD as $aut)
 {
-echo $pers->getInfos()."<br>";
+echo $aut->getInfos()."<br>";
 }
-DTOIndividu::delete($am); 
+DTOAuteur::delete($am);
+if (($key = array_search($am, $lesAuteursDansLaBD)) !== false) {
+    unset($lesAuteursDansLaBD[$key]);
+}
 echo "---------------------------------------------------------------<br>";
-foreach($lesGensDansLaBD as $pers)
+foreach($lesAuteursDansLaBD as $aut)
 {
-echo $pers->getInfos()."<br>";
+echo $aut->getInfos()."<br>";
 }
 ?>
 
