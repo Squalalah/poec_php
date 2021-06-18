@@ -8,7 +8,6 @@ class MiniExcursion {
     protected int $nombrePlaces;
     protected $lesEtapes; //Je ne donne pas le type 'Etape' à cette variable pour me faciliter l'exercice
 
-
     public function __construct(string $libelleMiniExcursion, int $nombrePlaces, $lesEtapes)
     {
         self::$totalMiniExcursion++;
@@ -90,41 +89,27 @@ class MiniExcursion {
 
 
     #region fonctions non-utilisés/non-demandés dans l'exercice
-    /**
-     * @param int $numMiniExcursion
-     */
+
     public function setNumMiniExcursion(int $numMiniExcursion): void
     {
         $this->numMiniExcursion = $numMiniExcursion;
     }
 
-    /**
-     * @return int
-     */
     public static function getTotalMiniExcursion(): int
     {
         return self::$totalMiniExcursion;
     }
 
-    /**
-     * @param int $totalMiniExcursion
-     */
     public static function setTotalMiniExcursion(int $totalMiniExcursion): void
     {
         self::$totalMiniExcursion = $totalMiniExcursion;
     }
 
-    /**
-     * @return mixed
-     */
     public function getLesEtapes()
     {
         return $this->lesEtapes;
     }
 
-    /**
-     * @param mixed $lesEtapes
-     */
     public function setLesEtapes($lesEtapes): void
     {
         $this->lesEtapes = $lesEtapes;

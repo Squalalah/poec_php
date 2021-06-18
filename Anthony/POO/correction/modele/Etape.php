@@ -27,8 +27,8 @@ class Etape {
     }
 
     public function donneDureePrevueHHMM() : string {
-        $heure = 0;
-        $minute = 0;
+        $heure = $minute = 0; //Permet d'assigner '0' a plusieurs variables en meme temps
+
         $heure = floor($this->dureeprevue/60); // Permet de récupérer le nombre d'heures, "floor()" simplifie à l'entier le plus bas.
         $minute = $this->dureeprevue%60; // Permet de récupérer le nombre de minutes (on récupère le reste de la division)
         #region Cliquer ici pour un exemple concret
@@ -61,33 +61,21 @@ class Etape {
 
     #region Fonctions non-utilisés/non-demandés par l'exercice
 
-    /**
-     * @param int $totalnumEtape
-     */
     public static function setTotalnumEtape(int $totalnumEtape): void
     {
         self::$totalnumEtape = $totalnumEtape;
     }
 
-    /**
-     * @param int $numEtape
-     */
     public function setNumEtape(int $numEtape): void
     {
         $this->numEtape = $numEtape;
     }
 
-    /**
-     * @param int $dureeprevue
-     */
     public function setDureeprevue(int $dureeprevue): void
     {
         $this->dureeprevue = $dureeprevue;
     }
 
-    /**
-     * @return MiniExcursion
-     */
     public function getMiniExcursion(): MiniExcursion
     {
         return $this->miniExcursion;
