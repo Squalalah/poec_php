@@ -37,7 +37,7 @@
         echo '<label for="nomRealisateur'.$a.'">Nom Realisateur:</label>';
         echo '<input type="text" name="nomRealisateur'.$a.'" value="Deschamps'.$a.'"><br/><br/>';
     }
-    echo '<input type="submit" value="Submit">';
+    echo '<input type="submit" name="submit" value="Submit">';
     echo '</form>';
 ?>
     </body>

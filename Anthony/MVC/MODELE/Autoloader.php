@@ -8,8 +8,8 @@ class  Autoloader
   static function autoload($class_name)
   {
     $rep = array(
-            'modele/dao/', //repertoire contenant la DAO
-            'modele/dto/' //repertoire contenant la DTO
+            'MODELE/dao/', //repertoire contenant la DAO
+            'MODELE/dto/' //repertoire contenant la DTO
           );
     foreach( $rep as $dir ) {
       if (file_exists($dir.$class_name.'.php')) {
@@ -18,4 +18,3 @@ class  Autoloader
     }
   }
 }
-?>
