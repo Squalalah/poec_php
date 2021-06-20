@@ -17,7 +17,6 @@ function rangePrime(int $number) : array {
     return $tab;
 }
 $time_start = microtime(true);
-//$number = readline();
 $number = 50000;
 $tableau = rangePrime($number);
 $result = implode(' ', $tableau);
