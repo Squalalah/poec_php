@@ -19,7 +19,7 @@ echo 'Résultats : '.$result.PHP_EOL;
 $time_end = microtime(true);
 echo 'Process : '. ($time_end-$time_start);
 /*
- * Avec fonction custom amélioré V2, 50000 nombres -> 0.063581943511963 sec d'execution
+ * 50.000 nombres -> 0.063581943511963 sec d'execution
  * 100.000 nombres -> 0.17518782615662 sec d'execution
- *
+ * Conclusion, le script 'primev1' était très proche de la solution pour calculer énormément de nombre premiers
 */

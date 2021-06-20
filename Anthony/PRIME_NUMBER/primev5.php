@@ -23,7 +23,7 @@ echo 'Résultats : '.$result.PHP_EOL;
 $time_end = microtime(true);
 echo 'Process : '. ($time_end-$time_start);
 /*
- * Avec fonction custom amélioré V2, 50000 nombres -> 1.8105850219727 sec d'execution
+ * 50.000 nombres -> 1.8105850219727 sec d'execution
  * 100.000 nombres -> 8.6114201545715 sec d'execution
  *
 */

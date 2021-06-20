@@ -25,4 +25,4 @@ $result = implode(' ', $tableau);
 echo 'Résultats : '.$result.PHP_EOL;
 $time_end = microtime(true);
 echo 'Process : '. ($time_end-$time_start);
-//Avec fonction custom, 50000 nombres -> 5.033191919326 sec d'execution
+//Avec fonction custom, 50.000 nombres -> 5.033191919326 sec d'execution
