@@ -11,12 +11,12 @@ function rangePrime(int $number) : array {
                 break;
             } else $bool = true;
         }
-        if($a == 3 ||$a == 5 || $bool) $tab[] = $a;
+        if($a == 3 || $a == 5 || $bool) $tab[] = $a;
     }
     return $tab;
 }
 $time_start = microtime(true);
-$number = 0000;
+$number = 100000;
 $tableau = rangePrime($number);
 $result = implode(' ', $tableau);
 echo 'Résultats : '.$result.PHP_EOL;
