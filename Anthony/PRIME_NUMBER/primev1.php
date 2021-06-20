@@ -11,11 +11,10 @@ for($i = 2; $i <= $number/2;$i++) {
     }
 }
 
-foreach($tableau as $value)
-{
-    $result .= $value.' ';
-}
+foreach($tableau as $value) $result .= $value.' ';
+
 echo 'Résultats : '.$result.PHP_EOL;
 $time_end = microtime(true);
 echo 'Process : '. ($time_end-$time_start);
 //50000 nombres -> 5.410933971405 sec d'execution
+//100.000 nombres -> 20.837471961975 sec d'execution
