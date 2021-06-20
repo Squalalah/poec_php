@@ -23,7 +23,7 @@ $tableau = rangePrime($number);
 $result = implode(' ', $tableau);
 echo 'Résultats : '.$result.PHP_EOL;
 $time_end = microtime(true);
-echo 'Process : '. ($gtime_end-$time_start);
+echo 'Process : '. ($time_end-$time_start);
 /*
  * Avec fonction custom amélioré V2, 50000 nombres -> 3.1972930431366 sec d'execution
  * (if $a == 3) pourrait être retiré en commencant la boucle à partir de 3, cependant, 3 est un nombre qui doit être
