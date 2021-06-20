@@ -24,7 +24,7 @@ echo 'Résultats : '.$result.PHP_EOL;
 $time_end = microtime(true);
 echo 'Process : '. ($time_end-$time_start);
 /*
- * Avec fonction custom amélioré V2, 50000 nombres -> 3.1972930431366 sec d'execution
+ * Avec fonction custom amélioré V2, 50000 nombres -> 3.0959551334381 sec d'execution
  * 100.000 nombres -> 11.504922866821 sec d'execution
  * (if $a == 3) pourrait être retiré en commencant la boucle à partir de 3, cependant, 3 est un nombre qui doit être
  * calculé en suivant l'algorithme des nbs. premiers (Contrairement à 2 qui est par défaut nb premier dans les règles).
