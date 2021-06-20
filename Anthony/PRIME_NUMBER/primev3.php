@@ -18,7 +18,6 @@ for($i = 2; $i <= $number/2;$i++) {
         if($value % $i === 0) unset($tableau[$key]);
     }
 }
-
 $result = implode(' ', $tableau);
 echo 'Résultats : '.$result.PHP_EOL;
 $time_end = microtime(true);

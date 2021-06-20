@@ -6,8 +6,8 @@ function rangePrime(int $number) : array {
     {
         $bool = false;
         for($i = 2; $i < $a; $i++) {
-            if ($i == 2) $bool = false;
-            elseif ($a % $i === 0 || $a == 3) {
+            if ($i == 2 && $a != 3) $bool = false;
+            elseif ($a % $i === 0) {
                 $bool = false;
                 break;
             } else $bool = true;
